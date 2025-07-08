@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@700&display=swap');
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  z-index: 10;
+}
+
+.button1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 0;
+  flex-direction: column;
+  position: relative;
+}
+
+.square-title {
+  width: 100%;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  background: linear-gradient(270deg, #ff0080, #7928ca, #007bff, #00cfff, #00ff94, #ffe600, #ff0080);
+  background-size: 1400% 1400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-text 6s ease-in-out infinite, wave 2s infinite linear;
+  display: inline-block;
+}
+
+@keyframes rainbow-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.todo-input {
+  width: 75%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+}
+
+.input-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  width: 85%;
+  margin: 0 auto;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 350px;
+  scrollbar-color: #007bff #fff;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+  border: 2px solid #111;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  z-index: 20;
+}
+
+.icon-btn {
+  background: #f4f4f4;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 0;
+  z-index: 21;
+}
+
+.empty-message {
+  text-align: center;
+  color: #bbb;
+  font-style: italic;
+  margin-top: 150px;
+}
+
+.button1 button {
+  position: absolute;
+  top: 56px;
+  right: 24px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1 rem;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.button1 button:hover {
+  background: #0056b3;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #333 25%, transparent 25%) -50px 0/100px 100px,
+              linear-gradient(135deg, #333 25%, transparent 25%) -50px 0/100px 100px,
+              linear-gradient(45deg, transparent 75%, #111 75%) -50px 0/100px 100px,
+              linear-gradient(135deg, transparent 75%, #111 75%) -50px 0/100px 100px;
+  background-color: #222;
+  animation: animatePlaid 5s linear infinite;
+  z-index: 1;
+}
+
+/* Fractal Plaid Animation */
+@keyframes animatePlaid {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, -100px 100px, 100px -100px, -100px -100px;
+  }
+}
+
+
