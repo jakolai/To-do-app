@@ -12,6 +12,9 @@ import {
   faCancel
 } from "@fortawesome/free-solid-svg-icons";
 
+
+
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
@@ -92,7 +95,12 @@ function App() {
               <li key={idx} className='todo-item'>
                 {editIdx === idx ? (
                   <>
-                    <input
+                    <textarea
+                      rows={5}
+                      onInput={(e) => {
+                        e.target.style.height = 'auto';
+                        e.target.style.height = e.target.scrollHeight + 'px';
+                      }}
                       className='edit-input'
                       value={editValue}
                       onChange={handleEditChange}
@@ -109,7 +117,7 @@ function App() {
                   <>
                     <span style={{ textDecoration: task.done ? 'line-through' : 'none', color: task.done ? '#aaa' : '#222' }}>{task.text}</span>
                     <div className='todo-actions'>
-                      <button className='todo-button icon-btn finish-btn' onClick={() => toggleDone(idx)} title='Done' disabled={task.done}><FontAwesomeIcon icon={faCheck} /></button>
+                      <button className='todo-button icon-btn finish-btn' onClick={() => toggleDone(idx)} title='Done' ><FontAwesomeIcon icon={faCheck} /></button>
                       <button className='todo-button icon-btn edit-btn' onClick={() => handleEdit(idx)} title='Edit'><FontAwesomeIcon icon={faEdit} /></button>
                       <button className='todo-button icon-btn remove-btn' onClick={() => handleRemove(idx)} title='Remove'><FontAwesomeIcon icon={faTrashCan} /></button>
                     </div>
