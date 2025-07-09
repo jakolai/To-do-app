@@ -59,8 +59,7 @@
 
 .input-container {
   width: 80%;
-  margin: 0 auto;
-  margin-bottom: 16px;
+  margin: 8px 50px 8px;
 }
 
 .todo-list {
@@ -128,7 +127,7 @@
 
 .button1 {
   position: absolute;
-  top: 56px;
+  top: 64px;
   right: 24px;
   padding: 0.75rem 2rem;
   font-size: 1.1 rem;
